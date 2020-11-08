@@ -1,0 +1,9 @@
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\DataStructure\bin\Debug\netcoreapp3.1\DataStructure.deps.json
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\DataStructure\bin\Debug\netcoreapp3.1\DataStructure.dll
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.csprojAssemblyReference.cache
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.AssemblyInfoInputs.cache
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.AssemblyInfo.cs
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\DataStructure\bin\Debug\netcoreapp3.1\DataStructure.pdb
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.csproj.CoreCompileInputs.cache
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.dll
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\DataStructure\obj\Debug\netcoreapp3.1\DataStructure.pdb
