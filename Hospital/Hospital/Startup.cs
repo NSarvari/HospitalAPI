@@ -8,6 +8,8 @@ namespace Hospital
     using Microsoft.Extensions.Hosting;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.AspNetCore.Http;
+    using DataAccess.IRepositories;
+    using DataAccess.Repositories;
 
     public class Startup
     {
@@ -27,6 +29,8 @@ namespace Hospital
             services.AddDbContext<ApplicationDbContext>(options =>
               options.UseSqlServer(
                   Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddTransient<IDoctorRepository, DoctorRepository>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 

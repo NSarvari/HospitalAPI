@@ -15,16 +15,16 @@ namespace DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "5.0.1");
 
             modelBuilder.Entity("DataStructure.Doctor", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("DoctorPhoto")
                         .HasColumnType("nvarchar(max)");
@@ -47,7 +47,7 @@ namespace DataAccess.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("DateOfExamination")
                         .IsRequired()
@@ -72,7 +72,7 @@ namespace DataAccess.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -94,7 +94,7 @@ namespace DataAccess.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("AppointmentDate")
                         .IsRequired()
@@ -156,7 +156,7 @@ namespace DataAccess.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<int>("DoctorID")
                         .HasColumnType("int");
@@ -182,6 +182,8 @@ namespace DataAccess.Migrations
                     b.HasOne("DataStructure.Patient", "Patient")
                         .WithMany("MedicalRecords")
                         .HasForeignKey("PatientId");
+
+                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("DataStructure.PatientDoctor", b =>
@@ -197,6 +199,10 @@ namespace DataAccess.Migrations
                         .HasForeignKey("PatientID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("DataStructure.PatientMedicine", b =>
@@ -212,6 +218,10 @@ namespace DataAccess.Migrations
                         .HasForeignKey("PatientID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Medicine");
+
+                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("DataStructure.Room", b =>
@@ -221,6 +231,29 @@ namespace DataAccess.Migrations
                         .HasForeignKey("DataStructure.Room", "DoctorID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Doctor");
+                });
+
+            modelBuilder.Entity("DataStructure.Doctor", b =>
+                {
+                    b.Navigation("PatientAttendences");
+
+                    b.Navigation("Room");
+                });
+
+            modelBuilder.Entity("DataStructure.Medicine", b =>
+                {
+                    b.Navigation("PatientBills");
+                });
+
+            modelBuilder.Entity("DataStructure.Patient", b =>
+                {
+                    b.Navigation("MedicalRecords");
+
+                    b.Navigation("PatientAttendences");
+
+                    b.Navigation("PatientBills");
                 });
 #pragma warning restore 612, 618
         }

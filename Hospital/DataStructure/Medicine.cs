@@ -1,5 +1,4 @@
-﻿
-namespace DataStructure
+﻿namespace DataStructure
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
