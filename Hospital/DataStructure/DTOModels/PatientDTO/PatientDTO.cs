@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    public class PatientDTO
+    public class PatientDTO:ModelDTO
     {
         public string Name { get; set; }
         public string Sex { get; set; }

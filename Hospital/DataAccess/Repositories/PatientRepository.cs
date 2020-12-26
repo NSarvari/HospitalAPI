@@ -2,11 +2,8 @@
 {
     using DataAccess.IRepositories;
     using DataStructure;
-    using Microsoft.EntityFrameworkCore;
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
 
     public class PatientRepository:GenericRepository<Patient>,IPatientRepository
     {
@@ -17,28 +14,40 @@
 
         public IEnumerable<Patient> GetAllPatients()
         {
-            return Context.Patients.ToList();
+            return Get().OrderBy(n => n.Id)
+               .ToList();
+        }
+
+        public Patient GetPatientByName(string patientName)
+        {
+            return GetByCondition(p => p.Name.Equals(patientName))
+               .FirstOrDefault();
         }
 
         public Patient GetPatientById(int patientId)
         {
-            return Context.Patients.Find(patientId);
+            return GetByCondition(p => p.Id.Equals(patientId))
+               .FirstOrDefault();
+        }
+        public Patient GetPatientById(string patientName)
+        {
+            return GetByCondition(p => p.Name.Equals(patientName))
+               .FirstOrDefault();
         }
 
         public void CreatePatient(Patient patient)
         {
-            Context.Patients.Add(patient);
+            Create(patient);
         }
 
-        public void DeletePatient(int patientId)
+        public void DeletePatient(Patient patient)
         {
-            Patient patient = Context.Patients.Find(patientId);
-            Context.Patients.Remove(patient);
+            Delete(patient);
         }
 
         public void UpdatePatient(Patient patient)
         {
-            Context.Entry(patient).State = EntityState.Modified;
+            Update(patient);
         }
 
         public void Save()

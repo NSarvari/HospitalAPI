@@ -1,7 +1,8 @@
 ﻿namespace DataStructure.DTOModels.DoctorDTO
 {
-    public class UpdateDoctorDTO
+    public class UpdateDoctorDTO:ModelDTO
     {
+
         public string DoctorPhoto { get; set; }
     }
 }

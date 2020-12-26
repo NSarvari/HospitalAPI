@@ -1,6 +1,6 @@
 ﻿namespace DataStructure.DTOModels.PatientDTO
 {
-    public class UpdatePatientDTO
+    public class UpdatePatientDTO : ModelDTO
     {
         public string AppointmentDate { get; set; }
 

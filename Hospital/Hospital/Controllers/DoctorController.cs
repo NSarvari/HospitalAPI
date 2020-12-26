@@ -1,57 +1,54 @@
 ﻿namespace Hospital.Controllers
 {
-    using DataAccess;
-    using DataAccess.IRepositories;
-    using DataStructure;
+    using AutoMapper;
+    using DataStructure.DTOModels.DoctorDTO;
+    using Hospital.Services.Interfaces;
     using Microsoft.AspNetCore.Mvc;
 
     [ApiController]
     [Route("[controller]")]
-    public class DoctorController : Controller
+    public class DoctorController : ControllerBase
     {
-        private readonly IDoctorRepository _doctorRepository;
-        protected ApplicationDbContext Context { get; set; }
+        private readonly IDoctorService _doctorService;
+        private readonly IMapper _mapper;
 
-        public DoctorController(IDoctorRepository doctorRepository, ApplicationDbContext context)
+        public DoctorController(IDoctorService doctorService, IMapper mapper)
         {
-            _doctorRepository = doctorRepository;
-            Context = context;
+            _doctorService = doctorService;
+            _mapper = mapper;
         }
 
         [HttpGet("{id}", Name = "DoctorById")]
         public IActionResult GetDoctorById(int id)
         {
-            var doctors = _doctorRepository.GetDoctorById(id);
+            var doctors = _doctorService.GetDoctorById(id);
             return Ok(doctors);
         }
 
         [HttpGet]
         public IActionResult GetAllDoctors()
         {
-            var doctors = _doctorRepository.GetAllDoctors();
+            var doctors = _doctorService.GetAllDoctors();
             return Ok(doctors);
         }
 
         [HttpPost]
-        public IActionResult CreateDoctor([FromBody] Doctor doctor)
+        public IActionResult CreateDoctor([FromBody] DoctorDTO doctor)
         {
-            _doctorRepository.CreateDoctor(doctor);
-            Context.SaveChanges();
-            return CreatedAtRoute("DoctorById", new { id = doctor.Id }, doctor);
+            DoctorDTO newDoctor = _doctorService.CreateDoctor(doctor);
+            return CreatedAtRoute("DoctorById", new { id = newDoctor.Id }, newDoctor);
         }
         [HttpPut("{id}")]
-        public IActionResult UpdateDoctor([FromBody] Doctor doctor)
+        public IActionResult UpdateDoctor(int id,[FromBody] UpdateDoctorDTO doctor)
         {
-            _doctorRepository.UpdateDoctor(doctor);
-            _doctorRepository.Save();
-            return Ok(doctor);
+            var updatedDoctor = _doctorService.UpdateDoctor(id, doctor);
+            return Ok(updatedDoctor);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteDoctor(Doctor doctor)
+        public IActionResult DeleteDoctor(int id, [FromBody] DeleteDoctorDTO doctor)
         {
-            _doctorRepository.DeleteDoctor(doctor);
-            _doctorRepository.Save();
+            var deletedDoctor = _doctorService.DeleteDoctor(id, doctor);
             return NoContent();
         }
     }

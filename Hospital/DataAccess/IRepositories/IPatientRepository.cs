@@ -6,9 +6,10 @@
     public interface IPatientRepository:IGenericRepository<Patient>
     {
         IEnumerable<Patient> GetAllPatients();
+        Patient GetPatientByName(string patientName);
         Patient GetPatientById(int patientId);
         void CreatePatient(Patient patient);
-        void DeletePatient(int patientId);
+        void DeletePatient(Patient patient);
         void UpdatePatient(Patient patient);
         void Save();
     }

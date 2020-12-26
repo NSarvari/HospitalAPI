@@ -124,8 +124,6 @@ D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\net
 D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\obj\Debug\netcoreapp3.1\Hospital.csproj.CoreCompileInputs.cache
-D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\obj\Debug\netcoreapp3.1\Hospital.MvcApplicationPartsAssemblyInfo.cache
 D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
@@ -137,3 +135,7 @@ D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\net
 D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\obj\Debug\netcoreapp3.1\Hospital.csproj.CoreCompileInputs.cache
+D:\Uni\II course\3ти семестър\.NET\API\Hospital\Hospital\obj\Debug\netcoreapp3.1\Hospital.MvcApplicationPartsAssemblyInfo.cache
