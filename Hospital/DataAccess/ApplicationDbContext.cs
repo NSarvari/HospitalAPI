@@ -61,5 +61,11 @@
 
         //Connection to model PatientBill
         public DbSet<PatientMedicine> PatientMedicines { get; set; }
+
+        //Connection to model User
+        public DbSet<User> Users { get; set; }
+
+        //Connection to model Role
+        public DbSet<Role> Roles { get; set; }
     }
 }

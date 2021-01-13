@@ -2,6 +2,7 @@
 {
     using AutoMapper;
     using DataStructure;
+    using DataStructure.DTOModels.AuthenticationDTO;
     using DataStructure.DTOModels.DoctorDTO;
     using DataStructure.DTOModels.PatientDTO;
     using System.Collections.Generic;
@@ -19,6 +20,10 @@
             this.CreateMap<Patient, PatientDTO>();
             this.CreateMap<UpdatePatientDTO, Patient>();
             this.CreateMap<DeletePatientDTO, Patient>();
+
+            this.CreateMap<User, UserModel>();
+            this.CreateMap<RegisterModel, User>();
+            this.CreateMap<UpdateModel, User>();
 
             //    CreateMap<DoctorDTO,Doctor>()
             //    .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))

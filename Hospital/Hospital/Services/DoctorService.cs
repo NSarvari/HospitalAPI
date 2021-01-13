@@ -8,7 +8,7 @@
     using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
 
-    public class DoctorService:IDoctorService
+    public class DoctorService : IDoctorService
     {
         private readonly IDoctorRepository _repository;
         private readonly IMapper _mapper;

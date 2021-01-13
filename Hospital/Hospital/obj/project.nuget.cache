@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "BkHHZPf/c8Lst3cVdNMEJhoAiu9OA2sMTGosS/NvUXEgxNXeyF2CL0ncbk2wmVNemJzzcMLSFuzCRJAjRou+ww==",
+  "dgSpecHash": "c7IAozv9MN546IlI3GE9Wcipl5r2eC1Aq8eCeEPAkHjlUKiNfKZkUgGu0/UIoT3ySO97isOlhSQCllBzEMur9w==",
   "success": true,
   "projectFilePath": "D:\\Uni\\II course\\3ти семестър\\.NET\\API\\Hospital\\Hospital\\Hospital.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nabi\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Nabi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\Nabi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Nabi\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.11\\microsoft.aspnetcore.authentication.jwtbearer.3.1.11.nupkg.sha512",
     "C:\\Users\\Nabi\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Nabi\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Nabi\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
