@@ -14,6 +14,7 @@
         public string ContactNumber { get; set; }
 
         public ICollection<PatientDoctor> PatientAttendences { get; set; }
+
         public ICollection<PatientMedicine> PatientBills { get; set; }
 
         public ICollection<MedicalRecord> MedicalRecords { get; set; }

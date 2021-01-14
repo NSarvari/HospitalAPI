@@ -3,6 +3,7 @@
     using AutoMapper;
     using DataStructure.DTOModels.PatientDTO;
     using Hospital.Services.Interfaces;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     [ApiController]
@@ -18,6 +19,7 @@
             _mapper = mapper;
         }
 
+        [Authorize]
         [HttpGet("GetPatientById/{id}")]
         public IActionResult GetPatientById(int id)
         {
@@ -25,6 +27,7 @@
             return Ok(patient);
         }
 
+        [Authorize]
         [HttpGet("GetPatientByName/{name}")]
         public IActionResult GetPatientByName(string name)
         {
@@ -32,6 +35,7 @@
             return Ok(patient);
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public IActionResult GetAllPatients()
         {
@@ -39,12 +43,15 @@
             return Ok(patients);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult CreatePatient([FromBody] PatientDTO patient)
         {
             PatientDTO newPatient = _patientService.CreatePatient(patient);
             return CreatedAtRoute("PatientById", new { id = newPatient.Id }, newPatient);
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         public IActionResult UpdatePatient(int id, [FromBody] UpdatePatientDTO patient)
         {
@@ -52,6 +59,7 @@
             return Ok(updatedPatient);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public IActionResult DeletePatient(int id, [FromBody] DeletePatientDTO patient)
         {
