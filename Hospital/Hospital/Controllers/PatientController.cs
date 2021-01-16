@@ -63,7 +63,7 @@
         [HttpDelete("{id}")]
         public IActionResult DeletePatient(int id, [FromBody] DeletePatientDTO patient)
         {
-            var deletedPatient = _patientService.DeletePatient(id, patient);
+            _patientService.DeletePatient(id, patient);
             return NoContent();
         }
     }

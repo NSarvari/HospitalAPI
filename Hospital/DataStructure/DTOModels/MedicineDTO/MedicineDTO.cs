@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.Text.Json.Serialization;
 
-    public class MedicineDTO
+    public class MedicineDTO:ModelDTO
     {
         public string Name { get; set; }
         public decimal Price { get; set; }

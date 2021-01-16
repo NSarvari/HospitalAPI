@@ -15,12 +15,14 @@
 
         public IEnumerable<Doctor> GetAllDoctors()
         {
-            return Get().OrderBy(n=>n.Id).Include(n=>n.PatientAttendences).Select(x=>new Doctor() {Id=x.Id,Name=x.Name, Speciality =x.Speciality, DoctorPhoto =x.DoctorPhoto,Room=x.Room,PatientAttendences=x.PatientAttendences})
+            return Get().OrderBy(n=>n.Id).Include(n=>n.PatientAttendences)
+                .Select(x=>new Doctor() {Id=x.Id,Name=x.Name, Speciality =x.Speciality, DoctorPhoto =x.DoctorPhoto,Room=x.Room,PatientAttendences=x.PatientAttendences})
                 .ToList();
         }
         public Doctor GetDoctorById(int doctorId)
         {
-            return GetByCondition(doctor => doctor.Id.Equals(doctorId)).Include(n => n.PatientAttendences).Select(x => new Doctor() { Id = x.Id, Name = x.Name, Speciality = x.Speciality, DoctorPhoto = x.DoctorPhoto, Room = x.Room, PatientAttendences = x.PatientAttendences })
+            return GetByCondition(doctor => doctor.Id.Equals(doctorId)).Include(n => n.PatientAttendences)
+                .Select(x => new Doctor() { Id = x.Id, Name = x.Name, Speciality = x.Speciality, DoctorPhoto = x.DoctorPhoto, Room = x.Room, PatientAttendences = x.PatientAttendences })
                 .FirstOrDefault();
         }
 

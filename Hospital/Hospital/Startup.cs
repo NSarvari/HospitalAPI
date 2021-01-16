@@ -86,11 +86,15 @@ namespace Hospital
 
             services.AddTransient<IDoctorRepository, DoctorRepository>();
             services.AddTransient<IPatientRepository, PatientRepository>();
+            services.AddTransient<IMedicineRepository, MedicineRepository>();
+            services.AddTransient<IMedicalRecordRepository, MedicalRecordRepository>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddScoped<IDoctorService, DoctorService>();
             services.AddScoped<IPatientService, PatientService>();
+            services.AddScoped<IMedicineService, MedicineService>();
+            services.AddScoped<IMedicalRecordService, MedicalRecordService>();
             services.AddScoped<IUserService, UserService>();
         }
 

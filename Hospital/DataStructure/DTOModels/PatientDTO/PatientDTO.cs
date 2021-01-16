@@ -1,6 +1,7 @@
 ﻿namespace DataStructure.DTOModels.PatientDTO
 {
     using System.Collections.Generic;
+    using System.Text.Json.Serialization;
 
     public class PatientDTO:ModelDTO
     {
@@ -13,10 +14,13 @@
 
         public string ContactNumber { get; set; }
 
+        [JsonIgnore]
         public ICollection<PatientDoctor> PatientAttendences { get; set; }
 
+        [JsonIgnore]
         public ICollection<PatientMedicine> PatientBills { get; set; }
 
+        [JsonIgnore]
         public ICollection<MedicalRecord> MedicalRecords { get; set; }
     }
 }

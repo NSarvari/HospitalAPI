@@ -4,6 +4,8 @@
     using DataStructure;
     using DataStructure.DTOModels.AuthenticationDTO;
     using DataStructure.DTOModels.DoctorDTO;
+    using DataStructure.DTOModels.MedicalRecordDTO;
+    using DataStructure.DTOModels.MedicineDTO;
     using DataStructure.DTOModels.PatientDTO;
     using System.Collections.Generic;
 
@@ -20,6 +22,16 @@
             this.CreateMap<Patient, PatientDTO>();
             this.CreateMap<UpdatePatientDTO, Patient>();
             this.CreateMap<DeletePatientDTO, Patient>();
+
+            this.CreateMap<MedicineDTO, Medicine>();
+            this.CreateMap<Medicine, MedicineDTO>();
+            this.CreateMap<UpdateMedicineDTO, Medicine>();
+            this.CreateMap<DeleteMedicineDTO, Medicine>();
+
+            this.CreateMap<MedicalRecordDTO, MedicalRecord>();
+            this.CreateMap<MedicalRecord, MedicalRecordDTO>();
+            this.CreateMap<UpdateMedicalRecordDTO, MedicalRecord>();
+            this.CreateMap<DeleteMedicalRecordDTO,MedicalRecord>();
 
             this.CreateMap<User, UserModel>();
             this.CreateMap<RegisterModel, User>();
