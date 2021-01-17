@@ -7,6 +7,7 @@
     using DataStructure.DTOModels.MedicalRecordDTO;
     using DataStructure.DTOModels.MedicineDTO;
     using DataStructure.DTOModels.PatientDTO;
+    using DataStructure.DTOModels.RoomDTO;
     using System.Collections.Generic;
 
     public class MappingProfile : Profile
@@ -32,6 +33,11 @@
             this.CreateMap<MedicalRecord, MedicalRecordDTO>();
             this.CreateMap<UpdateMedicalRecordDTO, MedicalRecord>();
             this.CreateMap<DeleteMedicalRecordDTO,MedicalRecord>();
+
+            this.CreateMap<RoomDTO, Room>();
+            this.CreateMap<Room, RoomDTO>();
+            this.CreateMap<UpdateRoomDTO, Room>();
+            this.CreateMap<DeleteRoomDTO, Room>();
 
             this.CreateMap<User, UserModel>();
             this.CreateMap<RegisterModel, User>();

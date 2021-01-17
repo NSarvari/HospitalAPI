@@ -6,8 +6,8 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class MedicineController : ControllerBase
     {
         private readonly IMedicineService _medicineService;

@@ -8,7 +8,6 @@
     public interface IDoctorService
     {
         IEnumerable<Doctor> GetAllDoctors();
-
         Doctor GetDoctorById(int doctorId);
         DoctorDTO CreateDoctor(DoctorDTO doctor);
         UpdateDoctorDTO UpdateDoctor(int id, [FromBody] UpdateDoctorDTO doctor);
