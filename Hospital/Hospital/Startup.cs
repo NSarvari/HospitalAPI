@@ -89,6 +89,8 @@ namespace Hospital
             services.AddTransient<IMedicineRepository, MedicineRepository>();
             services.AddTransient<IMedicalRecordRepository, MedicalRecordRepository>();
             services.AddTransient<IRoomRepository, RoomRepository>();
+            services.AddTransient<IPatientDoctorRepository, PatientDoctorRepository>();
+            services.AddTransient<IPatientMedicineRepository, PatientMedicineRepository>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
@@ -97,6 +99,8 @@ namespace Hospital
             services.AddScoped<IMedicineService, MedicineService>();
             services.AddScoped<IMedicalRecordService, MedicalRecordService>();
             services.AddScoped<IRoomService, RoomService>();
+            services.AddScoped<IPatientDoctorService, PatientDoctorService>();
+            services.AddScoped<IPatientMedicineService, PatientMedicineService>();
             services.AddScoped<IUserService, UserService>();
         }
 

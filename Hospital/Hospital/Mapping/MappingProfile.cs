@@ -6,7 +6,9 @@
     using DataStructure.DTOModels.DoctorDTO;
     using DataStructure.DTOModels.MedicalRecordDTO;
     using DataStructure.DTOModels.MedicineDTO;
+    using DataStructure.DTOModels.PatientDoctorDTO;
     using DataStructure.DTOModels.PatientDTO;
+    using DataStructure.DTOModels.PatientMedicineDTO;
     using DataStructure.DTOModels.RoomDTO;
     using System.Collections.Generic;
 
@@ -39,23 +41,15 @@
             this.CreateMap<UpdateRoomDTO, Room>();
             this.CreateMap<DeleteRoomDTO, Room>();
 
+            this.CreateMap<PatientDoctorDTO, PatientDoctor>();
+            this.CreateMap<PatientDoctor, PatientDoctorDTO>();
+
+            this.CreateMap<PatientMedicineDTO, PatientMedicine>();
+            this.CreateMap<PatientMedicine, PatientMedicineDTO>();
+
             this.CreateMap<User, UserModel>();
             this.CreateMap<RegisterModel, User>();
             this.CreateMap<UpdateModel, User>();
-
-            //    CreateMap<DoctorDTO,Doctor>()
-            //    .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
-            //    .ForMember(dest => dest.PatientAttendences, opt => opt.MapFrom(src => src.PatientAttendences))
-            //    .AfterMap((src, dest) => {
-            //        foreach (var b in dest.PatientAttendences)
-            //        {
-            //            b.PatientID = src.Id;
-            //        }
-            //    });
-            //    CreateMap<Patient, PatientDoctor>()
-            //              .ForMember(dest => dest.PatientID, opt => opt.MapFrom(src => src.Id))
-            //              .ForMember(dest => dest.Patient, opt => opt.MapFrom(src => src));
         }
-
     }
 }
