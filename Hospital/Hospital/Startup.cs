@@ -94,14 +94,14 @@ namespace Hospital
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            services.AddScoped<IDoctorService, DoctorService>();
-            services.AddScoped<IPatientService, PatientService>();
-            services.AddScoped<IMedicineService, MedicineService>();
-            services.AddScoped<IMedicalRecordService, MedicalRecordService>();
-            services.AddScoped<IRoomService, RoomService>();
-            services.AddScoped<IPatientDoctorService, PatientDoctorService>();
-            services.AddScoped<IPatientMedicineService, PatientMedicineService>();
-            services.AddScoped<IUserService, UserService>();
+            services.AddTransient<IDoctorService, DoctorService>();
+            services.AddTransient<IPatientService, PatientService>();
+            services.AddTransient<IMedicineService, MedicineService>();
+            services.AddTransient<IMedicalRecordService, MedicalRecordService>();
+            services.AddTransient<IRoomService, RoomService>();
+            services.AddTransient<IPatientDoctorService, PatientDoctorService>();
+            services.AddTransient<IPatientMedicineService, PatientMedicineService>();
+            services.AddTransient<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
